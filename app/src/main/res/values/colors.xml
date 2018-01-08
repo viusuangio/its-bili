@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorOrange</color>
+    <color name="colorPrimaryDark">@color/colorOrange</color>
+    <color name="colorAccent">#c7c7c7</color>
+
+
+    <!--系统配色方案-->
+    <color name="colorBlue">#5BC8FF</color>
+    <color name="colorOrange">#F44236</color>
+
+    <!--其他-->
+    <color name="item_click">#d9d9d9</color>
+</resources>
