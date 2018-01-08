@@ -1,17 +1,27 @@
-# its-bili
-Small app , can use it to search video from [Bilibili](bilibili.com) and donwload video's cover to storage
+# its-bili :sparkles:
 
-####08-01-2018 v1.03 UPDATE
-1. Fix video cover can not be seen in the album after downloading 
-2. Change the 'click' to the 'long press' for download viedeo's cover
-3. Added the video play function (using hardware acceleration)
 
-####07-01-2018 v1.02 UPDATE
-1. Added the download video cover to local function 
-2. Fix video information UI typesetting error
+ IT's Bili . Can use it to search video from [Bilibili](http://www.bilibili.com/)  and donwload video's cover to storage，all the of video data obtained parsing HTML by [jsoup](https://jsoup.org/). As an exercise project ，there are some functions that can be perfected, or add new functions. 
 
-####06-01-2018 v1.01 UPDATE
-1. UI and color matching modification  
-2. Added pull load, drop-down refresh 
-3. Fix error when loading UI
-4. Fix data display error problem 
+## UPDATE :exclamation:
+---
+###08-01-2018 [v1.03] UPDATE
+* Fix video cover can not be seen in the album after downloading 
+* Change the 'click' to the 'long press' for download viedeo's cover
+* Added the video play function (using hardware acceleration)
+
+###07-01-2018 [v1.02] UPDATE
+* Added the download video cover to local function 
+* Fix video information UI typesetting error
+
+###05-01-2018 [v1.01] UPDATE
+* UI and color matching modification  
+* Added pull load, drop-down refresh 
+* Fix error when loading UI
+* Fix data display error problem 
+
+
+
+##THANKS :heart:
+* [liying2008](https://github.com/liying2008)  Thank you for your selfless contribution , you really helped a lot of beginners :blush:
+* [Bilibili](https://www.bilibili.com/) It's really a very good online video site (If you really think it's only used to watch video, it's wrong  :laughing: )
