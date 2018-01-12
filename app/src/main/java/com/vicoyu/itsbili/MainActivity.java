@@ -1,5 +1,7 @@
 package com.vicoyu.itsbili;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +41,15 @@ public class MainActivity extends AppCompatActivity implements OnBiliVideoListen
         setContentView(R.layout.activity_main);
         findView();
         setListener();
+
+        /*自动输入上次搜索的关键词，如果没有则输入"轻松一笑"*/
+        String keyword = loadKeyWord();
+        if(keyword!=null&&keyword.length()>0){
+            mEtKeyword.setText(keyword);
+        }else{
+            mEtKeyword.setText("轻松一笑");
+        }
+        startSearch();
     }
 
     private void setListener() {
@@ -73,7 +84,9 @@ public class MainActivity extends AppCompatActivity implements OnBiliVideoListen
         });
     }
 
-
+    /**
+     * 获取控件
+     */
     private void findView() {
         mEtKeyword = findViewById(R.id.et_keyword);
         mIvSearch = findViewById(R.id.iv_search);
@@ -85,6 +98,9 @@ public class MainActivity extends AppCompatActivity implements OnBiliVideoListen
         mAdapter.setFooterInfo("");
     }
 
+    /**
+     * 数据搜索方法
+     */
     private void startSearch() {
         mKeyword = mEtKeyword.getText().toString().trim();
         if ("".equals(mKeyword)) {
@@ -96,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements OnBiliVideoListen
         task.execute(mKeyword, String.valueOf(mPage));
         mSwipeRefresh.setRefreshing(true);
         isLoad = false;
+        //存储搜索关键字
+        saveKeyWord(mKeyword);
     }
 
     @Override
@@ -120,5 +138,31 @@ public class MainActivity extends AppCompatActivity implements OnBiliVideoListen
         mSwipeRefresh.setRefreshing(false);
         showToast("没有更多数据了");
         mAdapter.setFooterInfo("没有更多数据了");
+    }
+
+    /**
+     * 将用户输入的搜索关键字存储在本地，
+     * 开启APP后默认上一次的搜索
+     * @param keyword
+     */
+    private void saveKeyWord(String keyword){
+        //获取SharedPreferences对象
+        Context mCon = MainActivity.this;
+        SharedPreferences mSp = mCon.getSharedPreferences("SEARCH",MODE_PRIVATE);
+        //将关键字存储
+        SharedPreferences.Editor mEditor = mSp.edit();
+        mEditor.putString("keyword",keyword);
+        mEditor.commit();
+    }
+
+    /**
+     * 获取存储在本地的搜索关键词
+     * @return
+     */
+    private String loadKeyWord(){
+        //获取SharedPreferences对象
+        Context mCon = MainActivity.this;
+        SharedPreferences mSp = mCon.getSharedPreferences("SEARCH",MODE_PRIVATE);
+        return mSp.getString("keyword","");
     }
 }

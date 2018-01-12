@@ -9,15 +9,6 @@ import android.util.AttributeSet;
 
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_IDLE;
 
-/**
- * =======================================================
- * 作者：liying - liruoer2008@yeah.net
- * 日期：2017/4/11 22:44
- * 版本：1.0
- * 描述：可以下拉刷新和分段加载的SwipeRefreshLayout <br />
- * 备注：
- * =======================================================
- */
 public class DSwipeRefresh extends SwipeRefreshLayout {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;

@@ -1,8 +1,10 @@
 # its-bili :sparkles:
- IT's Bili . Can use it to search video from [Bilibili](http://www.bilibili.com/)  and donwload video's cover to storage£¬all the of video data obtained parsing HTML by [jsoup](https://jsoup.org/). As an exercise project £¬there are some functions that can be perfected, or add new functions. 
+ IT's Bili . Can use it to search video from [Bilibili](http://www.bilibili.com/)  and donwload video's cover to storage,all the of video data obtained parsing HTML by [jsoup](https://jsoup.org/). As an exercise project,there are some functions that can be perfected, or add new functions. 
 ![image](./image.jpg)
 
 ## UPDATE :exclamation:
+### 12-01-2018 [v1.04] UPDATE
+* Added search keyword records and automatic search (DEFUALT : Search some funny video)
 ### 08-01-2018 [v1.03] UPDATE
 * Fix video cover can not be seen in the album after downloading 
 * Change the 'click' to the 'long press' for download viedeo's cover

@@ -208,6 +208,11 @@ public class VideosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         context.startActivity(intent);
     }
 
+    /**
+     * 判断当前网络环境是否是我Wi-Fi
+     * @param context
+     * @return 返回true or false
+     */
     private static boolean isWifi(Context context){
         ConnectivityManager mConn = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo mInfo = mConn.getActiveNetworkInfo();
